@@ -4,18 +4,18 @@
 
 - **Endpoint:** `/users`
 - **Phương thức:** GET
-- **Sử dụng:** [http://localhost:2222/users](http://localhost:2222/users)
+- **Sử dụng:** Truy cập [http://localhost:2222/users](http://localhost:2222/users) bằng `trình duyệt` hoặc `Postman`
 
 ### Thêm
 
 - **Endpoint:** `/users`
 - **Phương thức:** POST
 - **Mô tả:** Thêm 1 user
-- **Sử dụng:** Sử dụng `Postman` để thực hiện yêu cầu POST tới [http://localhost:2222/users](http://localhost:2222/users) với `JSON`:
+- **Sử dụng:** Dùng `Postman` để thực hiện yêu cầu POST tới [http://localhost:2222/users](http://localhost:2222/users) với `JSON`:
 
     ```json
     {
-      "name": "The Anh"
+      "name": "Nguyen The Anh"
     }
     ```
 
@@ -26,3 +26,4 @@
 - **Phương thức:** DELETE
 - **Mô tả:** Xóa user theo ID.
 - **Sử dụng:**  Sử dụng `Postman` để thực hiện yêu cầu DELETE tới [http://localhost:2222/users/{user_id}](http://localhost:2222/users/{user_id}). Thay thế `{user_id}` bằng ID của người dùng bạn muốn xóa.
+- **Ví dụ :**  http://localhost:2222/users/1
