@@ -24,12 +24,5 @@
 
 - **End point:** `/users/{user_id}`
 - **Phương thức:** DELETE
-- **Mô tả:** Xóa người dùng theo ID.
+- **Mô tả:** Xóa user theo ID.
 - **Sử dụng:**  Sử dụng `Postman` để thực hiện yêu cầu DELETE tới [http://localhost:2222/users/{user_id}](http://localhost:2222/users/{user_id}). Thay thế `{user_id}` bằng ID của người dùng bạn muốn xóa.
-
-## Dừng API
-
-Để dừng API và loại bỏ các container, chạy:
-
-```bash
-docker-compose down
