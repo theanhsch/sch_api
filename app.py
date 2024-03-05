@@ -48,6 +48,33 @@ def add_user():
     return jsonify({'message': 'User added successfully'})
 
 
+@app.route('/users/<int:user_id>', methods=['PUT'])
+def update_user(user_id):
+    data = request.get_json()
+    new_name = data.get('name', '')
+
+    if not new_name:
+        return jsonify({'error': 'New name is required'}), 400
+
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    # Check if the user with the given ID exists
+    cursor.execute('SELECT * FROM users WHERE id = ?', (user_id,))
+    user = cursor.fetchone()
+
+    if user is None:
+        conn.close()
+        return jsonify({'error': 'User not found'}), 404
+
+    # Update the user with the given ID
+    cursor.execute('UPDATE users SET name = ? WHERE id = ?', (new_name, user_id))
+    conn.commit()
+    conn.close()
+
+    return jsonify({'message': f'User with ID {user_id} updated successfully'})
+
+
 @app.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
     conn = sqlite3.connect('database.db')
